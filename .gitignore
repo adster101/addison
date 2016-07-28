@@ -75,6 +75,13 @@
 /administrator/language/en-GB/en-GB.plg_twofactorauth_totp.sys.ini
 /administrator/language/en-GB/en-GB.plg_twofactorauth_yubikey.ini
 /administrator/language/en-GB/en-GB.plg_twofactorauth_yubikey.sys.ini
+/administrator/language/en-GB/en-GB.plg_editors-xtd_module.ini
+/administrator/language/en-GB/en-GB.plg_editors-xtd_module.sys.ini
+/administrator/language/en-GB/en-GB.plg_system_stats.ini
+/administrator/language/en-GB/en-GB.plg_system_stats.sys.ini
+/administrator/language/en-GB/en-GB.plg_system_updatenotification.ini
+/administrator/language/en-GB/en-GB.plg_system_updatenotification.sys.ini
+
 /administrator/language/en-GB/en-GB.tpl_isis.ini
 /administrator/language/en-GB/en-GB.tpl_isis.sys.ini
 /administrator/language/en-GB/install.xml
@@ -293,7 +300,10 @@
 /components/com_users/*
 /components/com_weblinks/*
 /components/com_wrapper/*
+/components/com_modules/*
+/components/com_request/*
 /components/index.html
+/images
 /images/banners/*
 /images/headers/*
 /images/sampledata/*
@@ -333,6 +343,7 @@
 /language/en-GB/en-GB.tpl_protostar.sys.ini
 /language/en-GB/en-GB.com_search.ini
 /language/en-GB/en-GB.com_users.ini
+/language/en-GB/en-GB.com_request.ini
 /language/en-GB/en-GB.com_weblinks.ini
 /language/en-GB/en-GB.com_wrapper.ini
 /language/en-GB/en-GB.files_joomla.sys.ini
@@ -417,6 +428,7 @@
 /libraries/import.php
 /libraries/loader.php
 /libraries/platform.php
+/libraries/php-encryption/*
 /logs/*
 /media/cms/*
 /media/com_contenthistory/*
@@ -433,6 +445,8 @@
 /media/plg_quickicon_extensionupdate/*
 /media/plg_quickicon_joomlaupdate/*
 /media/plg_system_highlight/*
+/media/plg_captcha_recaptcha/*
+/media/plg_system_stats/*
 /media/system/*
 /media/index.html
 /modules/mod_articles_archive/*
@@ -476,6 +490,7 @@
 /plugins/content/geshi/*
 /plugins/content/joomla/*
 /plugins/content/loadmodule/*
+/plugins/content/slider/*
 /plugins/content/pagebreak/*
 /plugins/content/pagenavigation/*
 /plugins/content/vote/*
@@ -489,6 +504,7 @@
 /plugins/editors-xtd/image/*
 /plugins/editors-xtd/pagebreak/*
 /plugins/editors-xtd/readmore/*
+/plugins/editors-xtd/module/*
 /plugins/editors-xtd/index.html
 /plugins/extension/example/*
 /plugins/extension/joomla/*
@@ -521,7 +537,9 @@
 /plugins/system/p3p/*
 /plugins/system/redirect/*
 /plugins/system/remember/*
+/plugins/system/updatenotification/*
 /plugins/system/sef/*
+/plugins/system/stats/*
 /plugins/system/index.html
 /plugins/twofactorauth/*
 /plugins/user/contactcreator/*
