@@ -40,25 +40,21 @@ JHtml::_('behavior.caption');
     	$counter = 0;
     ?>
     <?php if (!empty($this->intro_items)) : ?>
+      <?php
+      // Set up basic layout for the intro items
+      $desk = 'u-1/' . $this->columns . '-desk';
+      $lap = 'u-1/' . $this->columns . '-lap';
+      ?>
       <div class="layout">
-    	<?php foreach ($this->intro_items as $key => &$item) : ?>
-    		<?php
-          // Set up basic layout for the intro items
-          $desk = 'u-1/' . $this->columns . '-desk';
-          $lap = 'u-1/' . $this->columns . '-lap';
-        ?>
-
-    		  <div class="layout__item <?php echo $desk . ' ' . $lap ?>">
-    			<div class="desk-p+ lap-p+ palm-p" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    	<?php foreach ($this->intro_items as $key => &$item) : ?><div class="layout__item <?php echo $desk . ' ' . $lap ?>">
+    			<div class="desk-p lap-p- palm-p--">
     			<?php
     					$this->item = &$item;
-    					echo $this->loadTemplate('intro_item');
-    			?>
-    			</div>
-    			</div>
-    	<?php endforeach; ?>
-    </div>
+    					echo $this->loadTemplate('intro_item'); ?></div></div><!--
+--><?php endforeach; ?>
+</div>
     <?php endif; ?>
+
 
     <?php if (!empty($this->link_items)) : ?>
     	<div class="items-more">

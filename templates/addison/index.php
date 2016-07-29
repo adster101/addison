@@ -25,7 +25,9 @@ $layout   = $app->input->getCmd('layout', '');
 $task     = $app->input->getCmd('task', '');
 $itemid   = $app->input->getCmd('Itemid', '');
 $sitename = $app->get('sitename');
-
+$menu = $app->getMenu();
+$active = $menu->getActive();
+$sitehome = ($active == $menu->getDefault('en-GB')) ? true : false;
 // Output as HTML5
 $doc->setHtml5(true);
 
@@ -79,7 +81,7 @@ else
 
 	<!-- Body -->
 	<div class="wrapper">
-		<div class="contact lap-p- palm-p-- desk-p-">
+		<div class="contact lap-ph- lap-pv-- palm-ph-- palm-pv-- desk-ph desk-pv--">
 		  <div class="layout">
 		    <div class="layout__item u-1/3-palm u-3/5-lap u-3/4-desk">
 					<jdoc:include type="modules" name="position-0" style="none" />
@@ -96,7 +98,7 @@ else
 			      <!-- Navigation. We hide it in small screens. -->
 			      <div class="layout__item u-2/5-desk u-2/5-lap u-4/5-palm">
 							<a class="" href="<?php echo $this->baseurl; ?>/">
-			        	<img class="desk-p- lap-p- palm-p--" src="/images/round-table-small-logo.png" />
+			        	<img class="lap-ph- lap-pv- palm-ph-- palm-pv-- desk-ph desk-pv-" src="/images/round-table-small-logo.png" />
 							</a>
 			        	<span><?php echo htmlspecialchars($sitename); ?></span>
 			      </div><!--
@@ -117,21 +119,24 @@ else
 			    </div>
 			  </div>
 			</header>
-
+			<?php if (!$sitehome) : ?>
+				<div class="desk-p lap-p- palm-p--">
+			<?php endif; ?>
+			<jdoc:include type="message" />
 
 				<?php if ($this->countModules('position-7')) : ?>
 					<div class="layout">
 						<div class="layout__item u-2/3-lap u-2/3-desk">
-
 				<?php endif; ?>
 					<main id="content" role="main">
 					<!-- Begin Content -->
 					<jdoc:include type="modules" name="position-3" style="xhtml" />
 
-					<jdoc:include type="message" />
 					<jdoc:include type="component" />
 
-					<jdoc:include type="modules" name="position-2" style="none" />
+					<!-- After main content -->
+					<jdoc:include type="modules" name="position-8" style="none" />
+
 					<!-- End Content -->
 				</main>
 					<?php if ($this->countModules('position-7')) : ?>
@@ -145,11 +150,15 @@ else
 						<!-- End Right Sidebar -->
 					</div>
 				</div>
-
+				<!-- After main content and sidebar -->
 				<?php endif; ?>
+				<?php if (!$sitehome) : ?>
+				</div>
+				<?php endif; ?>
+				<jdoc:include type="modules" name="position-2" style="none" />
 	<!-- Footer -->
 	<footer class="footer" role="contentinfo">
-		<div class="palm-p lap-p desk-p+">
+		<div class="palm-p lap-p- desk-p">
 		    <div class="">© <?php echo $sitename ?></div>
 		    <svg class="icon icon-facebook">
 		      <use xlink:href="#icon-facebook"></use>
