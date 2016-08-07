@@ -15,14 +15,12 @@ $canEdit = $this->item->params->get('access-edit');
 $info = $this->item->params->get('info_block_position', 0);
 ?>
   <?php if (isset($images->image_slider) && !empty($images->image_slider)) : ?>
-    <img class="hero__image" src="<?php echo htmlspecialchars($images->image_slider); ?>" alt="<?php echo htmlspecialchars($images->image_slider_alt); ?>"/>
+    <img title="<?php echo JHtml::_('string.truncate', (strip_tags($this->item->text)), $params->get('readmore_limit')); ?>" class="hero__image" src="<?php echo htmlspecialchars($images->image_slider); ?>" alt="<?php echo htmlspecialchars($images->image_slider_alt); ?>"/>
   <?php endif; ?>
-  <div class="hero__content desk-pv++ lap-pv+">
-
-      <h1 class="hero__title">
-        <?php echo $this->escape($images->image_slider_caption); ?>
-      </h1>
-
+  <div class="hero__content desk-p lap-p- palm-p--">
+    <h1 class="hero__title">
+      <?php echo $this->escape($images->image_slider_caption); ?>
+    </h1>
     <?php if ($this->item->state == 0) : ?>
       <span class="label label-warning"><?php echo JText::_('JUNPUBLISHED'); ?></span>
     <?php endif; ?>
@@ -41,15 +39,13 @@ $info = $this->item->params->get('info_block_position', 0);
         $link->setVar('return', base64_encode($returnURL));
       endif;
       ?>
-      <h2 class="hero__title">
+      <?php if ($params->get('show_readmore') && $this->item->readmore) : ?>
+      <p class="white">
         <?php
-        echo JHtml::_('string.truncate', (strip_tags($this->item->text)), $params->get('readmore_limit')); ?>
-      </h2>
-
-        <a class="btn" href="<?php echo $link; ?>">
-          <?php echo JHtml::_('string.truncate', ($this->item->title), $params->get('readmore_limit')); ?>
-        </a>
-
+        echo JHtml::_('string.truncate', (strip_tags($this->item->text)), $params->get('readmore_limit')); 
+        echo JLayoutHelper::render('joomla.content.readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
+      </p>
+    <?php endif; ?>
 
 
     <?php endif; ?>

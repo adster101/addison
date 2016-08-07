@@ -427,11 +427,10 @@ html {
   -webkit-font-smoothing: antialiased;
   /* [5] */ }
 
-html {
-  font-family: "Lucida Grande","Lucida Sans Unicode",sans-serif; }
-
 body {
-  position: relative; }
+  position: relative;
+  font-family: Helvetica,Arial,freesans,sans-serif;
+  color: #252525; }
 
 .no-scroll {
   height: 100%;
@@ -495,9 +494,9 @@ h6 {
  * Headings 1–6.
  */
 h1, h2, h3, h4, h5, h6 {
-  color: 4C4C4C;
-  font-family: Helvetica,Arial,sans-serif;
-  font-weight: 400; }
+  font-weight: 700;
+  letter-spacing: -1px;
+  letter-spacing: -.0625rem; }
 
 /**
  * A generic inverted heading style which can be applied to any headings.
@@ -548,7 +547,7 @@ strong {
 \*------------------------------------*/
 a {
   text-decoration: none;
-  color: #FCB134; }
+  color: #c77e03; }
   a:hover, a:active, a:focus {
     text-decoration: underline; }
 
@@ -687,7 +686,7 @@ img[height] {
   /* [7] */ }
 
 .btn--funding-request {
-  background-color: #EAEAEA;
+  background-color: #FCB134;
   border-color: #d1d1d1;
   color: #242424; }
   .btn--funding-request:hover, .btn--funding-request:active, .btn--funding-request:focus {
@@ -965,6 +964,16 @@ img[height] {
   float: left;
   width: 225px; }
 
+.sitename {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429; }
+  @media screen and (min-width: 64em) {
+    .sitename {
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.5; } }
+
 /*------------------------------------*\
     #SITE-NAV
 \*------------------------------------*/
@@ -1019,8 +1028,9 @@ header nav {
     text-decoration: none; }
 
 .contact__link {
-  padding: 6px 0;
-  display: inline-block; }
+  padding: 6px;
+  display: inline-block;
+  color: #242424; }
 
 .contact__link--tel,
 .contact__link--email {
@@ -1099,26 +1109,34 @@ footer {
   color: #fff; }
 
 .hero {
-  position: relative;
-  background-color: rgba(252, 177, 52, 0.9); }
-
-.hero__image {
-  opacity: 0.6; }
+  position: relative; }
 
 .hero__content {
-  position: absolute;
-  top: 0;
-  text-align: center;
-  width: 100%; }
+  background-color: black; }
+  @media screen and (min-width: 45em) {
+    .hero__content {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6); } }
 
 .hero__title {
   color: #fff;
-  font-weight: 700; }
-  @media screen and (max-width: 44.9375em) {
+  font-weight: 700;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0; }
+  @media screen and (min-width: 45em) and (max-width: 63.9375em) {
     .hero__title {
-      font-size: 20px;
-      font-size: 1.25rem;
-      line-height: 1.2; } }
+      font-size: 24px;
+      font-size: 1.5rem;
+      line-height: 1; } }
+  @media screen and (min-width: 64em) {
+    .hero__title {
+      font-size: 30px;
+      font-size: 1.875rem;
+      line-height: 1.6; } }
 
 .homepage-intro {
   background-color: #FCB134;

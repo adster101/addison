@@ -81,17 +81,10 @@ else
 
 	<!-- Body -->
 	<div class="wrapper">
-		<div class="contact lap-ph- lap-pv-- palm-ph-- palm-pv-- desk-ph desk-pv--">
-		  <div class="layout">
-		    <div class="layout__item u-1/3-palm u-3/5-lap u-3/4-desk">
-					<jdoc:include type="modules" name="position-0" style="none" />
-				</div><!--
-		--><div class="layout__item  u-2/3-palm u-2/5-lap u-1/4-desk">
-		  <a href="/donation-request-form" class="btn btn--small btn--funding-request" style="float:right">Funding request</a>
-		</div>
-	</div>
-		</div>
-			<!-- Header -->
+		<?php if ($this->countModules('position-0')) : ?>
+			<jdoc:include type="modules" name="position-0" style="none" />
+		<?php endif; ?>
+		<!-- Header -->
 			<header class="">
 			  <div class="site-nav">
 			    <div class="layout">
@@ -100,7 +93,7 @@ else
 							<a class="" href="<?php echo $this->baseurl; ?>/">
 			        	<img class="lap-ph- lap-pv- palm-ph-- palm-pv-- desk-ph desk-pv-" src="/images/round-table-small-logo.png" />
 							</a>
-			        	<span><?php echo htmlspecialchars($sitename); ?></span>
+			        <span class="sitename"><?php echo htmlspecialchars($sitename); ?></span>
 			      </div><!--
 			--><div class="layout__item u-3/5-desk u-3/5-lap  u-1/5-palm">
 						<?php if ($this->countModules('position-1')) : ?>
@@ -162,9 +155,6 @@ else
 		    <div class="">© <?php echo $sitename ?></div>
 		    <svg class="icon icon-facebook">
 		      <use xlink:href="#icon-facebook"></use>
-		    </svg>
-		    <svg class="icon icon-twitter">
-		      <use xlink:href="#icon-twitter"></use>
 		    </svg>
 		  </div>
 	</footer>

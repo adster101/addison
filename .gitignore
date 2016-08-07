@@ -555,6 +555,7 @@
 /templates/protostar/*
 /templates/system/*
 /templates/index.html
+/templates/addison/html/mod_articles_news/
 /tmp/*
 /configuration.php
 /index.php
